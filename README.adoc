@@ -20,7 +20,7 @@ This plugin is designed to give access to tools that need to control the deck, i
 
 == Example
 
-//http://opendevise.github.io/bespoke-extern[View the demo] online.
+http://opendevise.github.io/bespoke-extern[View the demo] online.
 
 This repository includes a demo folder that shows this plugin in action.
 To view it locally, you first need to clone this repository:

@@ -78,7 +78,7 @@ This plugin merely saves you the trouble by hiding the logic behind a plugin fun
 
 === Bind directly to the window object
 
-You can bind the Bespoke.js API directly to the window object.
+You can bind the Bespoke.js API directly to `window.bespoke`, thus making it available as a browser global:
 
 .src/scripts/main.js
 [subs=+quotes]

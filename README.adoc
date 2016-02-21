@@ -16,13 +16,13 @@ endif::[]
 
 Exports the Bespoke.js API to a global variable named `bespoke` and provides access to the collection of deck instances via `bespoke.decks` and the most recent deck via `bespoke.deck`.
 
-This plugin is designed to give access to tools that need to control the deck, such as presentation exporters like deck2pdf and decktape.
+This plugin is designed to give access to tools that need to control the deck, including presentation exporters such as deck2pdf and decktape.
 
 == Example
 
 //http://opendevise.github.io/bespoke-extern[View the demo] online.
 
-This repository includes a demo folder the shows this plugin in action.
+This repository includes a demo folder that shows this plugin in action.
 To view it locally, you first need to clone this repository:
 
  $ git clone https://github.com/opendevise/bespoke-extern && cd bespoke-extern
@@ -53,9 +53,11 @@ For example, when using CommonJS modules:
 
 ```js
 var bespoke = require('bespoke'),
+  // additional requires
   extern = require('bespoke-extern');
 
 bespoke.from('.deck', [
+  // additional plugins
   extern(bespoke)
 ]);
 ```
@@ -64,8 +66,51 @@ When using a browser global:
 
 ```js
 bespoke.from('.deck', [
+  // additional plugins
   bespoke.plugins.extern()
 ]);
+```
+
+== Alternate approaches
+
+There are other approaches you can take to export the Bespoke.js API and deck instance without using this plugin.
+This plugin merely saves you the trouble by hiding the logic behind a plugin function.
+
+=== Bind directly to the window object
+
+You can bind the Bespoke.js API directly to the window object.
+
+.src/scripts/main.js
+[subs=+quotes]
+```js
+*#(window.bespoke = bespoke).deck =#* bespoke.from('.deck', [
+  // plugins
+]);
+```
+
+=== Use a module export
+
+If you are using Browserify in your build, you can bind the Bespoke.js API to `module.exports`:
+
+.src/scripts/main.js
+[subs=+quotes]
+```js
+*#(module.exports = bespoke).deck =#* bespoke.from('.deck', [
+  // plugins
+]);
+```
+
+then bind the result to a standalone (global) variable by passing `{ standalone: 'bespoke' }` to browserify:
+
+.gulpfile.js
+[subs=+quotes]
+```js
+gulp.task('js', function() {
+  return browserify('./src/scripts/main.js', *#{ standalone: 'bespoke' }#*).bundle()
+    .pipe(source('src/scripts/main.js'))
+    .pipe(rename('build.js'))
+    .pipe(gulp.dest('./dist/build'));
+}
 ```
 
 == License

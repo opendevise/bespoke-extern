@@ -3,7 +3,7 @@ Dan Allen <https://github.com/mojavelinux>
 // Settings:
 :idprefix:
 :idseparator: -
-//ifdef::env-github[:badges:]
+ifdef::env-github[:badges:]
 // Variables:
 :release-version: master
 // URIs:

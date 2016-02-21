@@ -1,6 +1,5 @@
 = bespoke-extern
 Dan Allen <https://github.com/mojavelinux>
-v1.0.0, 2016-02-20
 // Settings:
 :idprefix:
 :idseparator: -

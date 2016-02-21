@@ -1,11 +1,12 @@
 = bespoke-extern
 Dan Allen <https://github.com/mojavelinux>
+v1.0.0, 2016-02-20
 // Settings:
 :idprefix:
 :idseparator: -
 ifdef::env-github[:badges:]
 // Variables:
-:release-version: master
+:release-version: v1.0.0
 // URIs:
 :uri-raw-file-base: https://raw.githubusercontent.com/opendevise/bespoke-extern/{release-version}
 

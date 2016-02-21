@@ -1,5 +1,5 @@
 /*!
- * bespoke-extern v1.0.0-dev
+ * bespoke-extern v1.0.0
  *
  * Copyright 2016, Dan Allen
  * This content is released under the MIT license

@@ -1,6 +1,6 @@
 {
   "name": "bespoke-extern",
-  "version": "1.0.0-dev",
+  "version": "1.0.0",
   "description": "Exports the Bespoke.js API to a global variable and provides access to the collection of deck instances.",
   "homepage": "https://github.com/opendevise/bespoke-extern",
   "bugs": "https://github.com/opendevise/bespoke-extern/issues",

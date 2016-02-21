@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>bespoke-extern demo</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <article class="deck">
+      <section>
+        <h1>bespoke-extern</h1>
+      </section>
+      <section>
+        <p>This presentation has <span id="count">???</span> slides.</p>
+        <p><button onclick="bespoke.deck.prev()">Return to previous slide</button></p>
+      </section>
+    </article>
+    <script src="build.js"></script>
+    <script>document.getElementById('count').textContent = bespoke.deck.slides.length;</script>
+  </body>
+</html>
